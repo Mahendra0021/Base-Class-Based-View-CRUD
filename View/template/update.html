@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <h4 class=" alert alert-info">Update Student </h4>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="Name">Name: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" name="Uname" class="form-control" value="{{ update_data.Uname }}">
+            <br />
+            <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+            <input type="email" name="email" class="form-control" value="{{ update_data.email }}"> <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" value="{{ update_data.password }}">
+            <br />
+
+            <!-- Your form fields here -->
+            <input type="submit" class="btn btn-success" value="Update" />
+            <a href="{% url 'Home' %}" class="btn btn-info">Back </a>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}
